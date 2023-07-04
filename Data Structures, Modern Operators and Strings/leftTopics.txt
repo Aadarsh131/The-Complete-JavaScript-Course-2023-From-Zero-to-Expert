@@ -1,0 +1,1 @@
+left topics: SPREAD, REST, Short circuiting, nullish coalescing operator,for-of loop, optional chaining(__?), Looping Objects- Object Keys,values and entries, challenges, SET, MAPS, strings, string methods,challenges

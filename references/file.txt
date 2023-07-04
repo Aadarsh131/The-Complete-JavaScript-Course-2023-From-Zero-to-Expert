@@ -1,0 +1,13 @@
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+
+https://github.com/trekhleb/javascript-algorithms
+
+https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0
+
+https://www.underthehoodlearning.com/what-is-runtime-environment/
+
+https://www.underthehoodlearning.com/ 
+
+https://www.youtube.com/watch?v=ipkjfvl40s0 (DOM a Web API for HTML, XML & SVG)
+
+https://dev.to/eteimz/the-dom-interfaces-5eon (DOM interface)

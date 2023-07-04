@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Hi there</div>
+    <script>
+      let fileNumber = prompt("Enter fileNumber");
+
+      function loadJS(FILE_URL, async = true) {
+        let scriptEle = document.createElement("script");
+
+        scriptEle.setAttribute("src", FILE_URL);
+        scriptEle.setAttribute("type", "text/javascript");
+        scriptEle.setAttribute("async", async);
+
+        document.body.appendChild(scriptEle);
+
+        // success event
+        scriptEle.addEventListener("load", () => {
+          // console.log("File loaded")
+        });
+        // error event
+        scriptEle.addEventListener("error", (ev) => {
+          console.log("Error on loading file", ev);
+        });
+      }
+      //   loadJS("file1_path.js", true);
+
+      // If we set async false, file2 is loaded and executed first, then file3 will be loaded
+      //   loadJS("file2_path", false);
+      //   loadJS("file3_path", true);
+
+      loadJS(`scripts/${fileNumber}_script.js`);
+    </script>
+  </body>
+</html>
