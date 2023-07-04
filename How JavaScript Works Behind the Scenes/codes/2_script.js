@@ -28,7 +28,9 @@ let aadarsh = {
   },
   printsomething: () => {
     console.log(`name is ${this.name}`, this); //as arrow functions, doesn't have its own 'this' keyword, its value will be of its parent scope, and here the parent scope is global scope(window object)
-    // NOTE: aadarsh object created with {} is not a scope, the global scope of "printsomething" function here will be the global object
+    // NOTE: aadarsh object created with {} is not a code block or is not a scope, its just a object literal notation, the global scope of "printsomething" function here will be the global object
+
+    //MISC: this is the reason it is advised to never declare a variable with 'var', as the variables declared with it would store in the global object(window object) and if the 'this' keyword is ever pointing to the global object, then it would create conflicts with the varibles created with 'var'
   },
 };
 aadarsh.print();
@@ -41,6 +43,7 @@ let atul = {
 
 //borrowing method from one function to other
 atul.print = aadarsh.print;
+
 atul.print(); //'this' keyword always points to the object that is calling the method
 
 const borrowFunc = atul.print; //copying a function into a variable
@@ -69,7 +72,8 @@ let aadarsh1 = {
     let isHappy = () => {
       console.log(`${this.name} is happy`);
     };
-    isHappy();
+    isHappy(); //here the 'this' would point to its parent scope which is unnamed function which is infact a method whose 'this' would be some obj which would call it (in our case it is aadarsh1)
+    //NOTE: if we would have used a normal function instead of arrow function, 'this' would have resulted into undefined, hence, in this case the arrow function does the work, it depends on the use-case and we can implement different approaches(whether to use normal fn or arrow fn ) for each use-case
   },
 };
 aadarsh1.print();
